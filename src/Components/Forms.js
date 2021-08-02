@@ -1,7 +1,18 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
-function Form() {
+
+function Forms({setEdit , deleteHandler,post}) {
+
+
+
+  const updateHandler = ( ) => {
+    console.log("dsfsdfs")
+    setEdit(false)
+  }
+
+
     return (
         <div>
             <Form>
@@ -17,7 +28,11 @@ function Form() {
   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
     <Form.Label>body</Form.Label>
     <Form.Control as="textarea" rows={3} />
+    <Button type="submit" variant="primary" onClick={updateHandler}>uPDATE
+    </Button>                 
+   <Button type="submit" variant="danger" onClick={(id)=> deleteHandler(post.id)} >Delete</Button>
   </Form.Group>
+
 </Form>
         </div>
     )
